@@ -13,6 +13,7 @@
 html,body{
     height: 100%;
     width: 100%;
+    font-size: clamp(14px,1.5vw,18px);
     background-color: #1d1d1d;
 }
 main{
@@ -21,7 +22,7 @@ main{
     align-items: center;
 
 
-    section{
+    section.view1{
         width: 100%;
         @include flex-col(1rem);
         padding: 1rem;
@@ -67,6 +68,69 @@ main{
             }
         }
     }
+
+    section.view2{
+        width: 100%;
+        padding: 1rem;
+        @include flex-col(1rem);
+
+        .top,.bottom{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+        .element{
+            text-align: center;
+            @include flex-col(0.5rem);
+            h2{
+                font-size: 3rem;
+                font-weight: 300;
+            }
+            small{
+                opacity: 0.6;
+                font-size: 1.1rem;
+            }
+        }
+    }
+
+    section.view3{
+        width: 100%;
+        padding: 1rem;
+        @include flex-col(1rem);
+
+        .top{
+            width: 100%;
+
+            img{
+                width: 100%;
+                border-radius: 1rem;
+            }
+        }
+        .bottom{
+            border-radius: 1rem;
+            @include flex-col(rem);
+            background-color: #292929;
+            padding: 2.5rem 2rem;
+                h1{
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    font-size: 1.5rem;
+                }
+                p{
+                    font-weight: 100;
+                    font-size: 1rem;
+                    opacity: 0.6;
+                    line-height:1.5;
+                }
+                     
+            
+        }
+        .bottom>p{
+            text-transform: uppercase;
+        }
+    }
 }
 
 section{
@@ -75,8 +139,9 @@ section{
 @media (min-width:900px){
     main{
         // background-color: rebeccapurple;
-        section{
+        section.view1{
             flex-direction: row;
+            padding: 1rem 4rem;
 
             .top,.bottom{
                 width: 50%;
@@ -95,6 +160,31 @@ section{
                     font-size: 3.5rem;
                 }
             }
+        }
+
+        section.view2{
+            flex-direction: row;
+            padding: 1rem 4rem;
+        }
+        section.view3{
+            flex-direction: row-reverse;
+            padding: 1rem 4rem;
+            // justify-content: space-between;
+                .top,.bottom{
+                    width: 50%;
+                }
+                .bottom{
+                    justify-content: space-between;
+                    h1{
+                        font-size: 2.5rem;
+                        transform: translateY(4rem);
+                    }
+                    .pars{
+                        display: flex;
+                        gap: 2rem;
+                        justify-content: space-between;
+                    }
+                }
         }
     }
 }
