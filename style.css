@@ -342,9 +342,13 @@ section {
     width: 100%;
   }
   main section.view8 .v8 {
-    padding: 5rem;
+    padding: 8rem;
+  }
+  main section.view8 .v8 h3 {
+    font-size: 2rem;
   }
   main section.view8 .v8 .textv8 {
+    margin-top: 5rem;
     flex-direction: row;
   }
   main section.view8 .v8 .textv8 button {

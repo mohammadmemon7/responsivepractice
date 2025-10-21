@@ -373,8 +373,13 @@ section{
         section.view8{
             width: 100%;
             .v8{
-                padding: 5rem;
+                padding: 8rem;
+
+                h3{
+                    font-size: 2rem;
+                }
                 .textv8{
+                    margin-top: 5rem;
                     flex-direction: row;
                     
                     button{
