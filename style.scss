@@ -154,7 +154,8 @@ main{
     }
 
     section.view6{
-        display: flex;
+        // display: flex;
+        @include flex-col(1rem);
         gap: 2rem;
         width: 100%;
         padding: 1rem;
@@ -169,7 +170,7 @@ main{
             justify-content: space-between;
             padding: 1rem;
 
-            .icon,.bottom{
+            .bottom{
                 background-color: rgba(187,187,187,0.375);
                 backdrop-filter: blur(5px);
                 border: 1px solid white;
@@ -180,11 +181,24 @@ main{
                 display: flex;
                 justify-content: flex-end;
                 gap: 1rem;
-            }
-            .icon{
+
+                i{
+                padding: 0.5rem;
                 width: fit-content;
                 border-radius: 50%;
+                backdrop-filter: blur(5px);
+                background-color: rgba(255,255,255,0.375);
+                }
             }
+            // .icon{
+            //     background-color: rgba(187,187,187,0.375);
+            //     backdrop-filter: blur(5px);
+            //     border: 1px solid white;
+            //     // border-radius: 0.5rem;
+            //     padding: 0.7rem;
+            //     width: fit-content;
+            //     border-radius: 50%;
+            // }
             .bottom{
                 display: flex;
                 justify-content: space-between;
@@ -195,6 +209,90 @@ main{
                 }
             }
             
+        }
+
+        #card2{
+            background-image: url(https://assets-global.website-files.com/63cffb7c16ab3347fc9734c8/63d2ccbd2e12fa747e999689_team-02.webp);
+        }
+
+        #card3{
+            background-image: url(https://assets-global.website-files.com/63cffb7c16ab3347fc9734c8/63d2ccbdc1f945f817bf4fd7_team-03.webp);
+        }
+    }
+
+    section.view7{
+        width: 100%;
+        @include flex-col(1rem);
+        padding: 1rem;
+
+        .top{
+            width: 100%;
+
+            img{
+                width: 100%;
+                border-radius: 1rem;
+            }
+        }
+        .bottom{
+            width: 100%;
+            border-radius: 1rem;
+            @include flex-col(1.5rem);
+            
+            background-color: #292929;
+            padding: 2.5rem;
+
+
+            h3{
+                font-weight: 200;
+                font-size: 1rem;
+                opacity: 0.6;
+                letter-spacing: 2;
+                margin-bottom: 1rem;
+            }
+            h1{
+                font-weight: 400;
+                font-size: 3.5rem;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    section.view8{
+        width: 100%;
+        @include flex-col(10rem);
+        padding: 1rem;
+        align-items: center;
+        justify-content: center;
+
+        .v8{
+            padding: 2rem;
+            color: black;
+            border-radius: 1rem;
+            background-color: #cebd63;
+
+            h3{
+                color: black;
+                font-weight: 400;
+            }
+
+            .textv8{
+                @include flex-col(1.5rem);
+                h1{
+                    color: black;
+                    font-size: 3rem;
+                    letter-spacing: 2.5px;
+                    line-height: 1.2;
+                    font-weight: 500;
+                }
+
+                button{
+                    padding: 1rem;
+                    background-color: black;
+                    width: 80%;
+                    margin-left: 2em;
+                    border-radius: 1rem;
+                }
+            }
         }
     }
 }
@@ -261,7 +359,33 @@ section{
         //     {
         //         opacity: 1;
         //     }
-        
+        section.view6{
+            flex-direction: row;
+        }
+
+        section.view7{
+            flex-direction: row;
+            .top,.bottom{
+                width: 50%;
+            }
+        }
+
+        section.view8{
+            width: 100%;
+            .v8{
+                padding: 5rem;
+                .textv8{
+                    flex-direction: row;
+                    
+                    button{
+                        font-size: 1.2rem;
+                        transform: translateY(30%);
+                        height: 80px;
+                        padding: 1rem;
+                    }
+                }
+            }
+        }
     }
 }
 @media (max-width: 899px){  /* strictly less than desktop breakpoint */
